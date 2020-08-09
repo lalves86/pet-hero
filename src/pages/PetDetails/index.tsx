@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { RouteComponentProps } from 'react-router-dom';
 import { Container } from './styles';
@@ -77,6 +78,8 @@ const PetDetails = ({ match }: RouteComponentProps<TParams>): JSX.Element => {
         {`${pet.age} ano`}
         {pet.age > 1 ? 's.' : '.'}
       </span>
+
+      <Link to="/">Voltar para Home</Link>
     </Container>
   );
 };
