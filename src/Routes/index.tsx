@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
+import Route from './Route';
 import Home from '../pages/Home';
 import PetDetails from '../pages/PetDetails';
 import SignIn from '../pages/SignIn';
@@ -8,11 +10,11 @@ import NewPet from '../pages/NewPet';
 
 const Routes: FC = () => (
   <Switch>
-    <Route path="/" exact component={Home} />
-    <Route path="/details/:petId" component={PetDetails} />
     <Route path="/signin" component={SignIn} />
     <Route path="/register" component={SignUp} />
-    <Route path="/new-pet" component={NewPet} />
+    <Route path="/" exact component={Home} isPrivate />
+    <Route path="/details/:petId" component={PetDetails} isPrivate />
+    <Route path="/new-pet" component={NewPet} isPrivate />
   </Switch>
 );
 

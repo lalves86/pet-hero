@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, FC } from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-import { RouteComponentProps } from 'react-router-dom';
 import { Container } from './styles';
 import api from '../../services/api';
-
-type TParams = { petId: string };
 
 interface Pet {
   id: string;
@@ -25,10 +22,10 @@ interface User {
   address: string;
 }
 
-const PetDetails = ({ match }: RouteComponentProps<TParams>): JSX.Element => {
+const PetDetails: FC = () => {
   const [pet, setPet] = useState({} as Pet);
   const [user, setUser] = useState({} as User);
-  const { petId } = match.params;
+  const { petId } = useParams();
 
   useEffect(() => {
     api.get(`pets/${petId}`).then((response) => {

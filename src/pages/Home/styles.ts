@@ -7,11 +7,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1080px;
+  min-width: 650px;
 
-  a {
+  a,
+  button {
     text-decoration: none;
     width: 200px;
-    margin: 0 0 5px 5px;
+    margin: 0 50px 5px 5px;
     text-align: center;
     border: 1px solid #fba30e;
     border-radius: 4px;

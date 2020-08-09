@@ -2,7 +2,7 @@ import React, { FC, useCallback, useRef } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import api from '../../services/api';
 import { Container } from './styles';
@@ -70,6 +70,7 @@ const SignUp: FC = () => {
 
         <button type="submit">Cadastrar</button>
       </Form>
+      <Link to="/signin">Voltar para o login</Link>
     </Container>
   );
 };
